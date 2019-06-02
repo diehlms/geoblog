@@ -1,0 +1,35 @@
+<div>
+    <%= form_for @article do |f| %>
+        <div>
+            <div>
+                <%= f.label :title %>
+            </div>
+            <div>
+                <%= f.text_field :title, placeholder: "Title", autofocus: true %>
+            </div>
+            <div>
+                <%= f.label :content %>
+            </div>
+            <div>
+                <%= f.text_area :content, placeholder: "Content", autofocus: true %>
+            </div>
+            <div>
+                <%= f.label :image %>
+            </div>
+            <div>
+                <%= f.file_field :image %>
+            </div>
+            <div>
+                <%= f.label :geology_article %>
+                <%= f.check_box :geology_article %>
+            </div>
+            <div>
+                <%= f.label :music_article %>
+                <%= f.check_box :music_article %>
+            </div>
+            <div>
+                <%= f.submit %>
+            </div>
+        </div>
+    <% end %>
+</div>

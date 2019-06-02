@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_30_232441) do
+ActiveRecord::Schema.define(version: 2019_06_02_030412) do
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string "image"
+    t.boolean "music_article", default: false
+    t.boolean "geology_article", default: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.string "title"
@@ -23,18 +34,7 @@ ActiveRecord::Schema.define(version: 2019_05_30_232441) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "geologyarticles", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "musicarticles", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.string "image"
+  create_table "sessions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
