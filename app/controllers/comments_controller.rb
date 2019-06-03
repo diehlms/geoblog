@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+    
+    helper_method :logged_in?, :current_user
+    
     def new
         user = session[:user_id]
         @comment = Comment.new(article_id: params[:article_id])
@@ -46,7 +49,7 @@ class CommentsController < ApplicationController
     private
 
         def comment_params
-            params.require(:comment).permit(:content, :user_id)
+            params.require(:comment).permit(:content, :user_id, :article_id)
         end
 
         def set_comment

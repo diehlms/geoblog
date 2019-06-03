@@ -12,6 +12,14 @@ class ArticlesController < ApplicationController
         @comments = @article.comments
     end
 
+    def geologyarticles
+        @articles = Article.all
+    end
+
+    def musicarticles
+        @articles = Article.all
+    end
+
     def index
         @articles = Article.all
     end
@@ -60,7 +68,7 @@ class ArticlesController < ApplicationController
         end
 
         def article_params
-            params.require(:article).permit(:title, :content, :image)
+            params.require(:article).permit(:title, :content, :image, :geology_article, :music_article)
         end
 
 end

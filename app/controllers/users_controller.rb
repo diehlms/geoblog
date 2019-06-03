@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
     before_action :set_user, only: [:show, :edit, :update, :destroy]
+    helper_method :logged_in?, :current_user
 
     def new
         @user = User.new

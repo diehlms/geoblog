@@ -10,6 +10,15 @@
   </head>
 
   <body>
+  <div>
+    <h1 class="website-title" align="center"><%= link_to "Nathan Wolfe", root_path %></h1>
+    <%= render 'layouts/navigation' %>
+    <br>
+    <%= render 'layouts/userportal' %>
+  </div>
     <%= yield %>
+    <div align="center">
+      <%= link_to "Patreon", '#' %>
+    </div>
   </body>
 </html>
