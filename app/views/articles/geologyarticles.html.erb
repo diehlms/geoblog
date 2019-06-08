@@ -4,15 +4,19 @@ This is where the geology articles are :^)
 <% end %>
 <% if @articles.any? %>
         <% @articles.each do |article| %>
-            <div>
+            <div class="panel panel-default">
                 <% if article.geology_article %>
-                    <p>Created by: <%= article.user.username if article.user %></p>                
-                    <%= link_to article.title, article_path(article) %>
-                    <%= truncate(article.content, length: 200) %>
-                    <%= image_tag(article.image.url, alt: 'Image') if article.image? %>
-                    <% if logged_in? && article.user_id == current_user.id %>                   
-                        <%= button_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure you want to delete the article?" } %>
-                    <% end %>
+                    <div class="panel-heading">
+                        <%= link_to article.title, article_path(article) %>
+                    </div>
+                    <div class="panel-body">
+                        <p><small>Created by: <%= article.user.username if article.user %><small></p>
+                        <%= truncate(article.content, length: 200) %>
+                        <%= image_tag(article.image.url, alt: 'Image') if article.image? %>
+                        <% if logged_in? && article.user_id == current_user.id %>                   
+                            <%= button_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure you want to delete the article?" } %>
+                        <% end %>
+                    </div>
                 <% end %>
             </div>
         <% end %>

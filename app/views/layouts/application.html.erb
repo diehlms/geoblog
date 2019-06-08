@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Geoblog</title>
+    <title>Nathan Wolfe</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,15 +10,12 @@
   </head>
 
   <body>
-  <div>
-    <h1 class="website-title" align="center"><%= link_to "Nathan Wolfe", root_path %></h1>
-    <%= render 'layouts/navigation' %>
-    <br>
-    <%= render 'layouts/userportal' %>
-  </div>
-    <%= yield %>
-    <div align="center">
-      <%= link_to "Patreon", '#' %>
+      <h1 class="website-title" align="center"><%= link_to "Nathan Wolfe", root_path %></h1>
+      <%= render 'layouts/navigation' %>
+      <div class="container">
+        <%= yield %>
+      </div>
+      <%= render 'layouts/footer' %>
     </div>
   </body>
 </html>

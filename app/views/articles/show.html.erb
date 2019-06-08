@@ -1,12 +1,16 @@
-<%= @article.title %>
-<div>
-    <p>Created by: <%= @article.user.username if @article.user %></p>
-    <%= simple_format(@article.content) %>
-    <% if logged_in? %>
-        <%= link_to "Add comment", new_comment_path(article_id: @article.id) %>
-    <% else %>
-        <p>please <%= link_to 'log in', login_path %> to post comments</p>
-    <% end %>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <%= @article.title %>
+    </div>
+    <div class="panel-body">
+        <p>Created by: <%= @article.user.username if @article.user %></p>
+        <%= simple_format(@article.content) %>
+        <% if logged_in? %>
+            <%= link_to "Add comment", new_comment_path(article_id: @article.id) %>
+        <% else %>
+            <p>please <%= link_to 'log in', login_path %> to post comments</p>
+        <% end %>
+    </div>
 </div>
 <div>
     <% @article.comments.each do |comment| %>
