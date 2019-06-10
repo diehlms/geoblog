@@ -1,3 +1,45 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.navbar {
+    margin-bottom: 0px;
+}
+
+.container {
+    margin-bottom: 50px;
+}
+
+.subnav {
+    padding: 0px;
+    margin-bottom: 30px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.panel-heading-link {
+    display: inline-block;
+}
+
+.panel-heading-button {
+    display: inline-block;
+}
+
+.panel-body {
+    display: grid;
+    grid-template-columns: 60% 33%;
+}
+
+.post-content-left {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.post-content-right {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    padding: 20px;
+} 
+
+.article-image {
+    width: 70%;
+}

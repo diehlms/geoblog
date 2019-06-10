@@ -8,14 +8,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li><%= link_to "Geology", geologyarticles_path %></li>
-            <li><%= link_to "Music", musicarticles_path %></li>
+            <li><%= link_to "Geology", geologyarticles_path, :class => "geologylink" %></li>
+            <li><%= link_to "Music", musicarticles_path, :class => "musiclink" %></li>
         </ul>
         <form class="navbar-form navbar-left" align="center">
             <div class="form-group">
@@ -45,4 +44,11 @@
         </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
+</nav>
+<nav class="subnav">
+    <div class="container-fluid">
+        <% if logged_in? %>
+            <%= link_to "create article", new_article_path %>
+        <% end %>
+    </div>
 </nav>

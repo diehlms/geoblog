@@ -1,7 +1,4 @@
 <h1>All articles</h1>
-<% if logged_in? %>
-    <%= link_to "create article", new_article_path %>
-<% end %>
 <% if @articles.any? %>
     <% @articles.each do |article| %>
         <div>
