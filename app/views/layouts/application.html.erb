@@ -12,14 +12,12 @@
   <body>
       <h1 class="website-title" align="center"><%= link_to "Nathan Wolfe", root_path %></h1>
       <%= render 'layouts/navigation' %>
-      <div class="container">
         <% if notice %>
           <div class="alert alert-info" role="alert">
             <p><%= notice %></p>
           </div>
         <% end %>
         <%= yield %>
-      </div>
       <%= render 'layouts/footer' %>
     </div>
   </body>

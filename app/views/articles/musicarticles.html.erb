@@ -1,25 +1,29 @@
-<h3 class="section-title">Music</h3>
-<% if @articles.any? %>
-    <% @articles.each do |article| %>
-        <% if article.music_article %>
-            <div class="article-card">
-                <div class="article card-body">
-                    <div class="col md-6">
-                        <h4><%= link_to article.title, article_path(article), :class => "card-title" %></h4>
-                        <small><p class="card-subtitle mb-2 text-muted">Created by: <%= article.user.username if article.user %></p></small>
-                        <p class="card-text"><%= truncate(article.content, length: 500) %></p>
-                    </div>
-                    <div class="col md-6">
-                        <%= image_tag(article.image.url(:thumb), alt: 'Image', :class => "pull-right article-image") if article.image? %>  
-                    </div>
-                </div>
-                <% if logged_in? && article.user_id == current_user.id %>   
-                    <div class="UIactions">                
-                        <span class="a"><%= button_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure you want to delete the article?" }, :class => "btn btn-danger" %></span>
-                        <span class="a"><%= button_to "Edit", edit_article_path(article), :class => "btn btn-primary" %></span>
+<div class="music-section">
+    <div class="container">
+        <h3 class="section-title">Music</h3>
+        <% if @articles.any? %>
+            <% @articles.each do |article| %>
+                <% if article.music_article %>
+                    <div class="article-card">
+                        <div class="article card-body">
+                            <div class="col md-6">
+                                <h4><%= link_to article.title, article_path(article), :class => "card-title" %></h4>
+                                <small><p class="card-subtitle mb-2 text-muted">Created by: <%= article.user.username if article.user %></p></small>
+                                <p class="card-text"><%= truncate(article.content, length: 500) %></p>
+                            </div>
+                            <div class="col md-6">
+                                <%= image_tag(article.image.url(:thumb), alt: 'Image', :class => "pull-right article-image") if article.image? %>  
+                            </div>
+                        </div>
+                        <% if logged_in? && article.user_id == current_user.id %>   
+                            <div class="UIactions">                
+                                <span class="a"><%= button_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure you want to delete the article?" }, :class => "btn btn-danger" %></span>
+                                <span class="a"><%= link_to "Edit", edit_article_path(article), :class => "btn btn-primary" %></span>
+                            </div>
+                        <% end %>
                     </div>
                 <% end %>
-            </div>
+            <% end %>
         <% end %>
-    <% end %>
-<% end %>
+    </div>
+</div>

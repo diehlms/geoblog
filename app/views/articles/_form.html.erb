@@ -1,41 +1,43 @@
-<div class="article-form">
-    <%= form_for @article do |f| %>
-        <div>
-            <div class="row">
-                <div class="form-group">
-                    <%= f.label :title %>
-                    <%= f.text_field :title, placeholder: "Title", autofocus: true, class: "form-control" %>
+<div class="container">
+    <div class="article-form">
+        <%= form_for @article do |f| %>
+            <div>
+                <div class="row">
+                    <div class="form-group">
+                        <%= f.label :title %>
+                        <%= f.text_field :title, placeholder: "Title", autofocus: true, class: "form-control" %>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <%= f.label :content %>
+                        <%= f.text_area :content, placeholder: "Content", autofocus: true, class: "form-control" , rows: 10 %>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <%= f.label :image %>
+                        <%= f.file_field :image, :class => "form-control-file" %>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <%= f.label :geology_article %>
+                        <%= f.check_box :geology_article %>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <%= f.label :music_article %>
+                        <%= f.check_box :music_article%>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <%= f.submit class: "btn btn-primary mb-2" %>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="form-group">
-                    <%= f.label :content %>
-                    <%= f.text_area :content, placeholder: "Content", autofocus: true, class: "form-control" , rows: 10 %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group">
-                    <%= f.label :image %>
-                    <%= f.file_field :image, :class => "form-control-file" %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group">
-                    <%= f.label :geology_article %>
-                    <%= f.check_box :geology_article %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group">
-                    <%= f.label :music_article %>
-                    <%= f.check_box :music_article%>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group">
-                    <%= f.submit class: "btn btn-primary mb-2" %>
-                </div>
-            </div>
-        </div>
-    <% end %>
+        <% end %>
+    </div>
 </div>
