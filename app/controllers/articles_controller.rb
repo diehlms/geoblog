@@ -9,6 +9,8 @@ class ArticlesController < ApplicationController
 
     def show
         set_article
+        @comment = Comment.new(article_id: params[:id])
+        user = session[:user_id]
         @comments = @article.comments
     end
 
@@ -36,7 +38,6 @@ class ArticlesController < ApplicationController
 
     def update
         set_article
-        @article = current_user.articles.find(params[:id])
         if @article.update(article_params)
             flash[:notice] = "Article updated"
             redirect_to article_path(@article)
@@ -69,6 +70,10 @@ class ArticlesController < ApplicationController
 
         def article_params
             params.require(:article).permit(:title, :content, :image, :geology_article, :music_article)
+        end
+
+        def comment_params
+            params.require(:comment).permit(:content, :user_id, :article_id)
         end
 
 end

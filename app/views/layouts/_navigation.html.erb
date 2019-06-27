@@ -25,7 +25,7 @@
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
                 <% if logged_in? %>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.username%> <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.username %> <span class="caret"></span></a>
                 <% else %>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Not logged in <span class="caret"></span></a>
                 <% end %>
@@ -44,11 +44,4 @@
         </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-</nav>
-<nav class="subnav">
-    <div class="container-fluid">
-        <% if logged_in? %>
-            <%= link_to "create article", new_article_path %>
-        <% end %>
-    </div>
 </nav>
