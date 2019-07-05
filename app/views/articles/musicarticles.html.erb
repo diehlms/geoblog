@@ -1,7 +1,7 @@
 <div class="music-section">
     <div class="container">
         <h3 class="section-title">Music</h3>
-        <% if @articles.any? %>
+        <% if @articles %>
             <% @articles.each do |article| %>
                 <% if article.music_article %>
                     <div class="article-card">

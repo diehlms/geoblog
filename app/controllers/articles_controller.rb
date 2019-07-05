@@ -15,14 +15,10 @@ class ArticlesController < ApplicationController
     end
 
     def geologyarticles
-        @articles = Article.all
+        @articles = Article.paginate(page: params[:page])
     end
 
     def musicarticles
-        @articles = Article.all
-    end
-
-    def index
         @articles = Article.all
     end
 

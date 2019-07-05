@@ -1,5 +1,5 @@
 <h1>All articles</h1>
-<% if @articles.any? %>
+<% if @articles %>
     <% @articles.each do |article| %>
         <div>
             <p>Created by: <%= article.user.username if article.user %></p>                

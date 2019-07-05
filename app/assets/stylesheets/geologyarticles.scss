@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .geology-section {
-    background-image: url("DSC_0356.jpg");
-    background-repeat: no-repeat;
-    background-size: 1200px;
+    top: 50px;
+    width: 100%;
+    background-size: cover;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url('DSC_0356.jpg');
 }

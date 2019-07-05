@@ -1,3 +1,10 @@
 // Place all the styles related to the musicarticles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.music-section {
+    top: 50px;
+    width: 100%;
+    background-size: cover;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url('31496_original.jpg');
+}

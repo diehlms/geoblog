@@ -1,7 +1,8 @@
 <div class="geology-section">
     <div class="container">
-        <h3 class="section-title">Geology</h3>
-        <% if @articles.any? %>
+        <h1 class="section-title">Geology</h1>
+        <%= will_paginate @articles %>
+        <% if @articles %>
             <% @articles.each do |article| %>
                 <% if article.geology_article %>
                     <div class="geology article-card">

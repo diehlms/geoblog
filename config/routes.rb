@@ -4,8 +4,14 @@ Rails.application.routes.draw do
 
   resources :articles
   resources :sessions
-  resources :users
+  resources :users do
+    member do
+      get :confirm_email
+    end
+  end
   resources :comments
+  resources :password_resets
+
 
   get '/articles', to: 'articles#index'
   get '/users', to: 'users#index'
